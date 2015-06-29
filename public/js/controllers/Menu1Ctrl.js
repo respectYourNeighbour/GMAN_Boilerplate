@@ -48,11 +48,10 @@ angular.module('Menu1Ctrl', []).controller('Menu1Controller', function($scope, H
 
         //this is the document that get's sent to the database;
         $scope.doc = {
-            'tip':'dictionar', 
-            'cuvant' : '' + $scope.cuvant, 
-            'definitia' : '' + $scope.definitia, 
-            'data':'Aprilie',
-            'categoria' : '' + $scope.category.name
+            'type':'dictionar', 
+            'word' : '' + $scope.cuvant, 
+            'definition' : '' + $scope.definitia,
+            'category' : '' + $scope.category.name
         };
 
     	HomeService.create($scope.doc).success(function(data) {
