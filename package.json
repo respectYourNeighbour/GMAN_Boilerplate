@@ -1,5 +1,19 @@
 {
 	"name" : "starter-node-angular",
+	"version" : "0.0.1",
+	"description": "Node Mongo Angular Starter Kit",
+	"author": "Luca Filip",
+	"repository" :	{ 
+	 	"type" : "git", 
+	 	"url" : "https://github.com/respectYourNeighbour/node-mongo-angular-starter-kit"
+	},
+	"keywords": 	[
+	    "Node",
+	    "MongoDB",
+	    "Angular",
+	    "Bootstrap",
+	    "Material"
+	],
 	"main" : "server.js",
 	"scripts": {
 	  	"start": "node server.js"
