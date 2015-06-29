@@ -1,10 +1,10 @@
-angular.module('SuedezaService', []).factory('SuedezaService', ['$http', function($http) {
+angular.module('HomeServ', []).factory('HomeService', ['$http', function($http) {
 
     // each function returns a promise object 
     return {
         // call to get all entries
         get : function() {
-            return $http.get('/api/bancuri');
+            return $http.get('/api/getEntries');
         },
 
         // call to POST and create a new entry

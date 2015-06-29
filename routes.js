@@ -15,7 +15,7 @@ module.exports = function(app, db) {
     ** When I call this route '/api/bancuri' the code within it will execute.
     ***************************************************************************************************** */
     // Sample API route.
-    app.get('/api/bancuri', function(req, res) {
+    app.get('/api/getEntries', function(req, res) {
 
         // use mongoDB Driver to get all bancs in the database;
         posts.find().toArray(function(err, items) {

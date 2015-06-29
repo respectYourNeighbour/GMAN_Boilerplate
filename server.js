@@ -14,7 +14,7 @@ var methodOverride = require('method-override');
 var port = process.env.PORT || 8083; // We set the port on which our application will run.
 
 // We connect to our local database (in this case our db name is 'personale');
-MongoClient.connect('mongodb://localhost:27017/personale', function (err, db) {
+MongoClient.connect('mongodb://localhost:27017/NMAstarterkit', function (err, db) {
     "use strict" //
     if(err) throw err;
 
