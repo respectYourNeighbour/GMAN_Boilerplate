@@ -27,7 +27,7 @@ MongoClient.connect('mongodb://localhost:27017/personale', function (err, db) {
 	app.use(express.static(__dirname + '/public')); // We set the static files location '/public'
 
 	// routes ==================================================
-	require('./app/routes')(app, db); // Pass our application into our routes;
+	require('./routes')(app, db); // Pass our application into our routes;
 
 	// start app ===============================================
 	app.listen(port);	
