@@ -1,4 +1,4 @@
-angular.module('HomeServ', []).factory('HomeService', ['$http', function($http) {
+angular.module('HomeServiceModule', []).factory('HomeService', ['$http', function($http) {
 
     // each function returns a promise object 
     return {

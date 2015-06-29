@@ -3,7 +3,7 @@ var mongodb = require('mongodb');
 module.exports = function(app, db) {
 
     // Connect to a collection from our database;
-    var posts = db.collection("suedeza");
+    var posts = db.collection("temporary");
 
     /****************************************************************************************************
     ** SERVER ROUTES

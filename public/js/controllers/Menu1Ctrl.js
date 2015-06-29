@@ -1,8 +1,8 @@
-angular.module('Menu1Ctrl', []).controller('Menu1Controller', function($scope, SuedezaService, $filter, $log) {
+angular.module('Menu1Ctrl', []).controller('Menu1Controller', function($scope, HomeService, $filter, $log) {
 
     console.log('Menu 1  Controller');
 
-    //necessary for clearing the modal form;
+    //Necessary for clearing the modal form;
     $scope.cuvant = '';
     $scope.entryCuvant = '';
     $scope.entryDefinitie = '';
@@ -26,7 +26,7 @@ angular.module('Menu1Ctrl', []).controller('Menu1Controller', function($scope, S
     // GET =====================================================================
     // when landing on the page, get all todos and show them
     // use the service to get all the entries
-    SuedezaService.get()
+    HomeService.get()
         .success(function(data) {
            // $scope.definitii = data;
            // console.dir(data);
@@ -55,7 +55,7 @@ angular.module('Menu1Ctrl', []).controller('Menu1Controller', function($scope, S
             'categoria' : '' + $scope.category.name
         };
 
-    	SuedezaService.create($scope.doc).success(function(data) {
+    	HomeService.create($scope.doc).success(function(data) {
     		console.log("this is the new entry returned from the API to the Service and from the Service to the Controller: ",data[0].categoria);
             if(data[0].categoria == $scope.categories[0].name){
                 $scope.en_ord.push(data[0]);
@@ -118,9 +118,9 @@ angular.module('Menu1Ctrl', []).controller('Menu1Controller', function($scope, S
         };
         var obj = {entryId : $scope.entryId, doc : $scope.doc}
 
-        SuedezaService.update(obj).success(function() {
+        HomeService.update(obj).success(function() {
             console.dir("se reapeleaza dupa ce fac edit");
-            SuedezaService.get()
+            HomeService.get()
                 .success(function(data) {
                     $scope.en_ord = $filter('filter')(data, { categoria: "EN-ORD" });
                     $scope.ett_ord = $filter('filter')(data, { categoria: "ETT-ORD" });
@@ -148,11 +148,11 @@ angular.module('Menu1Ctrl', []).controller('Menu1Controller', function($scope, S
 
     $scope.confirmDeletion = function() {
 
-        SuedezaService.del(holdDefinitie._id).success(function() {
+        HomeService.del(holdDefinitie._id).success(function() {
             console.dir("se reapeleaza dupa ce fac delete");
 
             //After deleting something bring again the refreshed entries from db to reflect the truth in each category;
-            SuedezaService.get()
+            HomeService.get()
                 .success(function(data) {
                     $scope.en_ord = $filter('filter')(data, { categoria: "EN-ORD" });
                     $scope.ett_ord = $filter('filter')(data, { categoria: "ETT-ORD" });
@@ -179,7 +179,7 @@ angular.module('Menu1Ctrl', []).controller('Menu1Controller', function($scope, S
         $('#message-text').val('');
     });
 
-    //Pagination;
+    //Pagination definition.
     $scope.currentPage = 1;
     $scope.pageSize = 5;
 
