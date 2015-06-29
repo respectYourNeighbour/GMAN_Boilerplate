@@ -85,8 +85,8 @@ module.exports = function(app, db) {
     /****************************************************************************************************
     ** FRONTEND ROUTES
     ** This route will handle all Angular requests.
-    ** We say whatever the request route is, send the ./public/index.html file. 
-    ** And inside this index.html file Angular will take over.
+    ** Here we are saying: "whatever the request route is, send the ./public/index.html file" 
+    ** And from inside this index.html file Angular will take over.
     ***************************************************************************************************** */
     app.get('*', function(req, res) {
         res.sendfile('./public/index.html'); // Load our 'public/index.html' file.
