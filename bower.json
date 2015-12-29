@@ -1,28 +1,31 @@
 {
-    "name": "starter-node-angular",
-    "version": "0.0.1",
-    "description" : "Node Mongo Angular Starter Kit",
-    "author": "Luca Filip",
-    "repository" :  { 
-        "type" : "git", 
-        "url" : "https://github.com/respectYourNeighbour/node-mongo-angular-starter-kit"
-    },
-    "keywords":     [
-        "Node",
-        "MongoDB",
-        "Angular",
-        "Bootstrap",
-        "Material"
-    ],
-    "dependencies": {
-        "bootstrap": "~3.3.5",
-        "font-awesome": "~4.3.0",
-        "angular": "1.4.1",
-        "angular-route": "~1.4.x",
-        "angular-animate": "^1.4.x",
-        "angular-aria": "~1.4.x",
-        "angular-material": "0.10.0",
-        "angular-utils-pagination" : "*",
-        "jquery": "1.11.3"
-    }
+  "name": "starter-node-angular",
+  "version": "0.0.1",
+  "description": "Node Mongo Angular Starter Kit",
+  "author": "Luca Filip",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/respectYourNeighbour/node-mongo-angular-starter-kit"
+  },
+  "keywords": [
+    "Node",
+    "MongoDB",
+    "Angular",
+    "Bootstrap",
+    "Material"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "font-awesome": "~4.3.0",
+    "angular": "1.4.1",
+    "angular-route": "~1.4.x",
+    "angular-animate": "^1.4.x",
+    "angular-aria": "~1.4.x",
+    "angular-material": "0.10.0",
+    "angular-utils-pagination": "*",
+    "jquery": "1.11.3"
+  },
+  "resolutions": {
+    "angular": "1.4.8"
+  }
 }
