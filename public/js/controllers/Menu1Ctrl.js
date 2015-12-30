@@ -29,15 +29,17 @@ angular.module('Menu1Ctrl', []).controller('Menu1Controller', function($scope, H
     HomeService.get()
         .success(function(data) {
            // $scope.definitii = data;
-           // console.dir(data);
+            
 
-            $scope.en_ord = $filter('filter')(data, { categoria: "EN-ORD" });
-            $scope.ett_ord = $filter('filter')(data, { categoria: "ETT-ORD" });
-            $scope.verb = $filter('filter')(data, { categoria: "VERB" });
-            $scope.verb_past_form = $filter('filter')(data, { categoria: "VERB-PAST-FORM" });
-            $scope.resor = $filter('filter')(data, { categoria: "RESOR" });
-            $scope.mat = $filter('filter')(data, { categoria: "MAT" });
-            $scope.medicin = $filter('filter')(data, { categoria: "MEDICIN" });
+            $scope.en_ord = $filter('filter')(data, { category: "EN-ORD" });
+            $scope.ett_ord = $filter('filter')(data, { category: "ETT-ORD" });
+            $scope.verb = $filter('filter')(data, { category: "VERB" });
+            $scope.verb_past_form = $filter('filter')(data, { category: "VERB-PAST-FORM" });
+            $scope.resor = $filter('filter')(data, { category: "RESOR" });
+            $scope.mat = $filter('filter')(data, { category: "MAT" });
+            $scope.medicin = $filter('filter')(data, { category: "MEDICIN" });
+
+            console.dir($scope.en_ord);
     });
 
 

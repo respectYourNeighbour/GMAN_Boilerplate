@@ -30,9 +30,9 @@
                             <h1 class="md-display-2">Tab 1</h1>
                             <div class="col-md-12 box effect1" dir-paginate="defEnOrd in en_ord | filter:q | orderBy:'cuvant' |itemsPerPage: pageSize" pagination-id="defEnOrd" current-page="currentPage">
                                 <span class='base cuvant'>
-                                    <h3>{{defEnOrd.cuvant}}</h3>
+                                    <h3>{{defEnOrd.word}}</h3>
                                 </span>
-                                <div class='base definitie'>{{defEnOrd.definitia}}</div>
+                                <div class='base definitie'>{{defEnOrd.definition}}</div>
                                 <div class="base buttons delete" ng-click="clickDelete(defEnOrd, $event)">
                                     <a href="#" class="btnSpecial red"><i class="fa fa-times"></i></a>
                                 </div>
