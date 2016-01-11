@@ -88,22 +88,6 @@ module.exports = function (grunt) {
         hostname: 'localhost',
         livereload: 35729
       },
-      proxies: [
-        {
-          context: '/arc',
-          host: 'localhost',
-          changeOrigin: false,
-          https: false,
-          port: 8080
-        },
-        {
-          context: '/arc/login',
-          host: 'www.it-trans.org',
-          changeOrigin: true,
-          https: false,
-          port: 8080
-        }
-      ],
       livereload: {
         options: {
           open: true,
@@ -112,9 +96,6 @@ module.exports = function (grunt) {
               if (!Array.isArray(options.base)) {
                   options.base = [options.base];
               }
-
-              // Setup the proxy
-              var middlewares = [require('grunt-connect-proxy/lib/utils').proxyRequest];
 
               // Serve static files.
               options.base.forEach(function(base) {
@@ -143,7 +124,6 @@ module.exports = function (grunt) {
           port: 9001,
           middleware: function (connect) {
             return [
-              proxySnippet,
               connect.static('.tmp'),
               connect.static('test'),
               connect().use(
@@ -458,7 +438,6 @@ module.exports = function (grunt) {
       'clean:server',
       'wiredep',
       'concurrent:server',
-      'configureProxies',
       'autoprefixer',
       'connect:livereload',
       'watch'
