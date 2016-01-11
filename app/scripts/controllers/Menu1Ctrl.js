@@ -1,4 +1,6 @@
-angular.module('Menu1Ctrl', []).controller('Menu1Controller', function($scope, HomeService, $filter, $log) {
+'use strict';
+
+angular.module('Menu1Ctrl', []).controller('Menu1Controller', function($scope, HomeService, $filter) {
 
     console.log('Menu 1  Controller');
 
@@ -10,13 +12,13 @@ angular.module('Menu1Ctrl', []).controller('Menu1Controller', function($scope, H
 
     //Categories to chose from in the create new entry modal;
     $scope.categories = [
-        {name: "EN-ORD"},
-        {name: "ETT-ORD"},
-        {name: "VERB"},
-        {name: "VERB-PAST-FORM"},
-        {name: "RESOR"},
-        {name: "MAT"},
-        {name: "MEDICIN"}
+        {name: 'EN-ORD'},
+        {name: 'ETT-ORD'},
+        {name: 'VERB'},
+        {name: 'VERB-PAST-FORM'},
+        {name: 'RESOR'},
+        {name: 'MAT'},
+        {name: 'MEDICIN'}
     ];
 
 
@@ -31,15 +33,15 @@ angular.module('Menu1Ctrl', []).controller('Menu1Controller', function($scope, H
            // $scope.definitii = data;
             
 
-            $scope.en_ord = $filter('filter')(data, { category: "EN-ORD" });
-            $scope.ett_ord = $filter('filter')(data, { category: "ETT-ORD" });
-            $scope.verb = $filter('filter')(data, { category: "VERB" });
-            $scope.verb_past_form = $filter('filter')(data, { category: "VERB-PAST-FORM" });
-            $scope.resor = $filter('filter')(data, { category: "RESOR" });
-            $scope.mat = $filter('filter')(data, { category: "MAT" });
-            $scope.medicin = $filter('filter')(data, { category: "MEDICIN" });
+            $scope.enOrd = $filter('filter')(data, { category: 'EN-ORD' });
+            $scope.ettOrd = $filter('filter')(data, { category: 'ETT-ORD' });
+            $scope.verb = $filter('filter')(data, { category: 'VERB' });
+            $scope.verbPastForm = $filter('filter')(data, { category: 'VERB-PAST-FORM' });
+            $scope.resor = $filter('filter')(data, { category: 'RESOR' });
+            $scope.mat = $filter('filter')(data, { category: 'MAT' });
+            $scope.medicin = $filter('filter')(data, { category: 'MEDICIN' });
 
-            console.dir($scope.en_ord);
+            console.dir($scope.enOrd);
     });
 
 
@@ -57,53 +59,53 @@ angular.module('Menu1Ctrl', []).controller('Menu1Controller', function($scope, H
         };
 
     	HomeService.create($scope.doc).success(function(data) {
-    		console.log("this is the new entry returned from the API to the Service and from the Service to the Controller: ",data[0].categoria);
-            if(data[0].categoria == $scope.categories[0].name){
-                $scope.en_ord.push(data[0]);
+    		console.log('this is the new entry returned from the API to the Service and from the Service to the Controller: ',data[0].categoria);
+            if(data[0].categoria === $scope.categories[0].name){
+                $scope.enOrd.push(data[0]);
             }
-            if(data[0].categoria == $scope.categories[1].name){
-                $scope.ett_ord.push(data[0]);
+            if(data[0].categoria === $scope.categories[1].name){
+                $scope.ettOrd.push(data[0]);
             }
-            if(data[0].categoria == $scope.categories[2].name){
-                console.log('verb')
+            if(data[0].categoria === $scope.categories[2].name){
+                console.log('verb');
                 $scope.verb.push(data[0]);
             }
-            if(data[0].categoria == $scope.categories[3].name){
-                $scope.verb_past_form.push(data[0]);
+            if(data[0].categoria === $scope.categories[3].name){
+                $scope.verbPastForm.push(data[0]);
             }
-            if(data[0].categoria == $scope.categories[4].name){
+            if(data[0].categoria === $scope.categories[4].name){
                 $scope.resor.push(data[0]);
             }
-            if(data[0].categoria == $scope.categories[5].name){
+            if(data[0].categoria === $scope.categories[5].name){
                 $scope.mat.push(data[0]);
             }
-            if(data[0].categoria == $scope.categories[6].name){
+            if(data[0].categoria === $scope.categories[6].name){
                 $scope.medicin.push(data[0]);
             }
             
             
     	});
-    }
+    };
 
     $scope.clickCreate = function() {
         $scope.cuvant = '';
         $scope.definitia = '';
         $scope.category = $scope.categories[0];
-    }
+    };
 
-    $scope.clickEdit = function(definitie, $event) {
-        console.log("definitie "+definitie.categoria);
+    $scope.clickEdit = function(definitie) {
+        console.log('definitie '+definitie.categoria);
 
         $scope.entryId = definitie._id;
 
         //get the index position in the array by the category name of the definition selected;
-        pos = $scope.categories.map(function(e) { return e.name; }).indexOf(definitie.categoria);
+        var pos = $scope.categories.map(function(e) { return e.name; }).indexOf(definitie.categoria);
         $scope.category = $scope.categories[pos];
 
         //put the values of the clicked definition in the input fields for it to be modified;
         $scope.cuvant = definitie.cuvant;
         $scope.definitia = definitie.definitia;
-    }
+    };
 
     $scope.formEditSubmit = function() {
         $('#editModal').modal('hide');
@@ -117,56 +119,56 @@ angular.module('Menu1Ctrl', []).controller('Menu1Controller', function($scope, H
             'data':'Aprilie',
             'categoria' : '' + $scope.category.name
         };
-        var obj = {entryId : $scope.entryId, doc : $scope.doc}
+        var obj = {entryId : $scope.entryId, doc : $scope.doc};
 
         HomeService.update(obj).success(function() {
-            console.dir("se reapeleaza dupa ce fac edit");
+            console.dir('se reapeleaza dupa ce fac edit');
             HomeService.get()
                 .success(function(data) {
-                    $scope.en_ord = $filter('filter')(data, { categoria: "EN-ORD" });
-                    $scope.ett_ord = $filter('filter')(data, { categoria: "ETT-ORD" });
-                    $scope.verb = $filter('filter')(data, { categoria: "VERB" });
-                    $scope.verb_past_form = $filter('filter')(data, { categoria: "VERB-PAST-FORM" });
-                    $scope.resor = $filter('filter')(data, { categoria: "RESOR" });
-                    $scope.mat = $filter('filter')(data, { categoria: "MAT" });
-                    $scope.medicin = $filter('filter')(data, { categoria: "MEDICIN" });
+                    $scope.enOrd = $filter('filter')(data, { categoria: 'EN-ORD' });
+                    $scope.ettOrd = $filter('filter')(data, { categoria: 'ETT-ORD' });
+                    $scope.verb = $filter('filter')(data, { categoria: 'VERB' });
+                    $scope.verbPastForm = $filter('filter')(data, { categoria: 'VERB-PAST-FORM' });
+                    $scope.resor = $filter('filter')(data, { categoria: 'RESOR' });
+                    $scope.mat = $filter('filter')(data, { categoria: 'MAT' });
+                    $scope.medicin = $filter('filter')(data, { categoria: 'MEDICIN' });
             });
         });
 
         //this is the document that get's sent to the database;
         
-    }
+    };
 
 
     //this var is for memorizing the entry that needs to be deleted;
     var holdDefinitie;
-    $scope.clickDelete = function(definitie, $event) {
+    $scope.clickDelete = function(definitie) {
         holdDefinitie = definitie;
         $scope.entryCuvant  = definitie.cuvant;
         $scope.entryDefinitie = definitie.definitia;
         $('#modalAlert').modal('show');
-    }
+    };
 
     $scope.confirmDeletion = function() {
 
         HomeService.del(holdDefinitie._id).success(function() {
-            console.dir("se reapeleaza dupa ce fac delete");
+            console.dir('se reapeleaza dupa ce fac delete');
 
             //After deleting something bring again the refreshed entries from db to reflect the truth in each category;
             HomeService.get()
                 .success(function(data) {
-                    $scope.en_ord = $filter('filter')(data, { categoria: "EN-ORD" });
-                    $scope.ett_ord = $filter('filter')(data, { categoria: "ETT-ORD" });
-                    $scope.verb = $filter('filter')(data, { categoria: "VERB" });
-                    $scope.verb_past_form = $filter('filter')(data, { categoria: "VERB-PAST-FORM" });
-                    $scope.resor = $filter('filter')(data, { categoria: "RESOR" });
-                    $scope.mat = $filter('filter')(data, { categoria: "MAT" });
-                    $scope.medicin = $filter('filter')(data, { categoria: "MEDICIN" });
+                    $scope.enOrd = $filter('filter')(data, { categoria: 'EN-ORD' });
+                    $scope.ettOrd = $filter('filter')(data, { categoria: 'ETT-ORD' });
+                    $scope.verb = $filter('filter')(data, { categoria: 'VERB' });
+                    $scope.verbPastForm = $filter('filter')(data, { categoria: 'VERB-PAST-FORM' });
+                    $scope.resor = $filter('filter')(data, { categoria: 'RESOR' });
+                    $scope.mat = $filter('filter')(data, { categoria: 'MAT' });
+                    $scope.medicin = $filter('filter')(data, { categoria: 'MEDICIN' });
             });
         });
 
         $('#modalAlert').modal('hide');
-    }
+    };
 
 
     $('#createModal').on('shown.bs.modal', function() {

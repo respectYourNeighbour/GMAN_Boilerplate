@@ -90,33 +90,7 @@ module.exports = function (grunt) {
       },
       livereload: {
         options: {
-          open: true,
-          middleware: function (connect, options) {
-
-              if (!Array.isArray(options.base)) {
-                  options.base = [options.base];
-              }
-
-              // Serve static files.
-              options.base.forEach(function(base) {
-                  middlewares.push(connect.static(base));
-              });
-
-              // Make directory browse-able.
-              var directory = options.directory || options.base[options.base.length - 1];
-              middlewares.push(connect.directory(directory));
-
-              var yeomanMiddlewares = [
-                connect.static('.tmp'),
-                connect().use(
-                    '/bower_components',
-                    connect.static('./bower_components')
-                ),
-                connect.static(appConfig.app)
-              ];
-
-              return yeomanMiddlewares.concat(middlewares);
-          }
+          open: true
         }
       },
       test: {

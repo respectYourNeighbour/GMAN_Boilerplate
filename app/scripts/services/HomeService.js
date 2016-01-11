@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('HomeServiceModule', []).factory('HomeService', ['$http', function($http) {
 
     // each function returns a promise object 
@@ -10,7 +12,7 @@ angular.module('HomeServiceModule', []).factory('HomeService', ['$http', functio
         // call to POST and create a new entry
         create : function(newEntry) {
             return $http.post('/api/PostNewEntry', newEntry).success(function(data){
-                console.log("this is the new entry that was inserted in DB and now comes back from the API in the Service: ", data[0]);
+                console.log('this is the new entry that was inserted in DB and now comes back from the API in the Service: ', data[0]);
                 return data[0];
             });
         },
@@ -29,6 +31,6 @@ angular.module('HomeServiceModule', []).factory('HomeService', ['$http', functio
             });
         }
 
-    }       
+    };       
 
 }]);
