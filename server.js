@@ -25,7 +25,7 @@ MongoClient.connect('mongodb://localhost:27017/NMAstarterkit', function (err, db
 	app.use(bodyParser.urlencoded({ extended: true })); // parse application/x-www-form-urlencoded
 
 	app.use(methodOverride('X-HTTP-Method-Override')); // override with the X-HTTP-Method-Override header in the request. simulate DELETE/PUT
-	app.use(express.static(__dirname + '/public')); // We set the static files location '/public'
+	app.use(express.static(__dirname + '/app')); // We set the static files location '/app'
 
 	// routes ==================================================
 	require('./routes')(app, db); // We are passing our application into our routes;
