@@ -1,0 +1,11 @@
+{
+    "HEADLINE": "Quelle belle Module!",
+    "PARAGRAPH": "Sérieusement!",
+    "PASSED_AS_TEXT": "Hey! Je a été remis comme un texte!",
+    "PASSED_AS_ATTRIBUTE": "Je a été remis comme un attribut, ou cool?",
+    "PASSED_AS_INTERPOLATION": "Les débutants! Je interpolée!",
+    "VARIABLE_REPLACEMENT": "Hi {{name}}",
+    "BUTTON_LANG_DE": "Allemand",
+    "BUTTON_LANG_EN": "Anglais",
+    "BUTTON_LANG_FR": "Français"
+}

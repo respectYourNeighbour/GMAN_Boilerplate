@@ -1,3 +1,4 @@
+// Generated on 2015-05-23 using generator-angular 0.9.8
 'use strict';
 
 // # Globbing
@@ -10,6 +11,7 @@ module.exports = function (grunt) {
 
   // Load grunt tasks automatically
   require('load-grunt-tasks')(grunt);
+  var proxySnippet = require('grunt-connect-proxy/lib/utils').proxyRequest;
 
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
@@ -88,9 +90,54 @@ module.exports = function (grunt) {
         hostname: 'localhost',
         livereload: 35729
       },
+      proxies: [
+        {
+          context: '/arc',
+          host: 'localhost',
+          changeOrigin: false,
+          https: false,
+          port: 8080
+        },
+        {
+          context: '/arc/login',
+          host: 'www.it-trans.org',
+          changeOrigin: true,
+          https: false,
+          port: 8080
+        }
+      ],
       livereload: {
         options: {
-          open: true
+          open: true,
+          middleware: function (connect, options) {
+
+              if (!Array.isArray(options.base)) {
+                  options.base = [options.base];
+              }
+
+              // Setup the proxy
+              var middlewares = [require('grunt-connect-proxy/lib/utils').proxyRequest];
+
+              // Serve static files.
+              options.base.forEach(function(base) {
+                  middlewares.push(connect.static(base));
+              });
+
+              // Make directory browse-able.
+              var directory = options.directory || options.base[options.base.length - 1];
+              middlewares.push(connect.directory(directory));
+
+              var yeomanMiddlewares = [
+                connect.static('.tmp'),
+                connect().use(
+                    '/bower_components',
+                    connect.static('./bower_components')
+                ),
+                connect.static(appConfig.app)
+              ];
+
+              return yeomanMiddlewares.concat(middlewares);
+          }
         }
       },
       test: {
@@ -98,6 +145,7 @@ module.exports = function (grunt) {
           port: 9001,
           middleware: function (connect) {
             return [
+              proxySnippet,
               connect.static('.tmp'),
               connect.static('test'),
               connect().use(
@@ -412,6 +460,7 @@ module.exports = function (grunt) {
       'clean:server',
       'wiredep',
       'concurrent:server',
+      'configureProxies',
       'autoprefixer',
       'connect:livereload',
       'watch'
