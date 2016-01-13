@@ -6,6 +6,7 @@ A starting kit app that's using Node-MongoDB-Angular-Grunt and more...
 * [.editorconfig](#editorconfig)
 * [.gitattributes](#gitattributes)
 * [.gitignore](#gitignore)
+* [.jshintrc](#jshintrc)
 - bower install
 - npm install
 - mongod (turn the MongoDB Server on)
@@ -39,3 +40,7 @@ It tells git which files (or patterns) it should ignore. It's usually used to av
 
 Read more: https://git-scm.com/docs/gitignore
 
+## .jshintrc
+You can define configuration for jshint in two ways. Either by adding special comments to your code or by storing your configuration in a .jshintrc file. JSHint is a program that flags suspicious usage in programs written in JavaScript.
+
+Read more: http://jshint.com/docs/
