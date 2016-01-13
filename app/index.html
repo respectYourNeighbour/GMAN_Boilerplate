@@ -4,6 +4,12 @@
         <meta charset="UTF-8">
         <base href="/">
 
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <!-- build:css(.tmp) styles/main.css -->
+        <link rel="stylesheet" href="styles/main.css">
+        <!-- endbuild -->
+
         <title>Starter Node and Angular</title>
 
 
@@ -27,30 +33,6 @@
         <!-- Angular Material -->   <script src='https://rawgit.com/angular/bower-material/master/angular-material.js'></script>
         <!--   Dir Pagination -->   <script src="./libs/angular-utils-pagination/dirPagination.js"></script>
 
-        <!--******************************* 
-        ******* ANGULAR CONTROLLERS *******
-        *********************************** -->
-        <!-- Home  Controller   --> <script src="scripts/controllers/HomeCtrl.js"></script>
-        <!-- Menu 1 Controller  --> <script src="scripts/controllers/Menu1Ctrl.js"></script>
-        <!-- Menu 2 Controller  --> <script src="scripts/controllers/Menu2Ctrl.js"></script>
-        <!-- Menu 3 Controller  --> <script src="scripts/controllers/Menu3Ctrl.js"></script>
-        <!-- Menu 4 Controller  --> <script src="scripts/controllers/Menu4Ctrl.js"></script>
-        <!-- Menu 5 Controller  --> <script src="scripts/controllers/Menu5Ctrl.js"></script>
-
-        <!--**************************** 
-        ******* ANGULAR SERVICES *******
-        ******************************** -->
-        <!--  Suedeza Service   --> <script src="scripts/services/HomeService.js"></script>
-        
-        <!--************************** 
-        ******* ANGULAR ROUTES *******
-        ****************************** -->
-        <!--    App Routes      --> <script src="scripts/appRoutes.js"></script>
-
-        <!--*********************** 
-        ******* ANGULAR APP *******
-        *************************** -->
-        <!--      App JS        --> <script src="scripts/app.js"></script>
 
     </head>
 
@@ -76,6 +58,31 @@
             <!-- Angular dynamic content -->
             <div ng-view></div>
         </div>
+        
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <!--******************************* 
+        ******* ANGULAR CONTROLLERS *******
+        *********************************** -->
+        <!-- Home  Controller   --> <script src="scripts/controllers/HomeCtrl.js"></script>
+        <!-- Menu 1 Controller  --> <script src="scripts/controllers/Menu1Ctrl.js"></script>
+        <!-- Menu 2 Controller  --> <script src="scripts/controllers/Menu2Ctrl.js"></script>
+        <!-- Menu 3 Controller  --> <script src="scripts/controllers/Menu3Ctrl.js"></script>
+        <!-- Menu 4 Controller  --> <script src="scripts/controllers/Menu4Ctrl.js"></script>
+        <!-- Menu 5 Controller  --> <script src="scripts/controllers/Menu5Ctrl.js"></script>
+        <!--**************************** 
+        ******* ANGULAR SERVICES *******
+        ******************************** -->
+        <!--  Suedeza Service   --> <script src="scripts/services/HomeService.js"></script>
+        
+        <!--************************** 
+        ******* ANGULAR ROUTES *******
+        ****************************** -->
+        <!--    App Routes      --> <script src="scripts/appRoutes.js"></script>
 
+        <!--*********************** 
+        ******* ANGULAR APP *******
+        *************************** -->
+        <!--      App JS        --> <script src="scripts/app.js"></script>
+        <!-- endbuild -->
     </body>
 </html>
