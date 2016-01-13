@@ -41,6 +41,7 @@ It tells git which files (or patterns) it should ignore. It's usually used to av
 Read more: https://git-scm.com/docs/gitignore
 
 ## .jshintrc
-You can define configuration for jshint in two ways. Either by adding special comments to your code or by storing your configuration in a .jshintrc file. JSHint is a program that flags suspicious usage in programs written in JavaScript.
+JSHint is a program that flags suspicious usage in programs written in JavaScript.
+You can define configuration for jshint in two ways. Either by adding special comments to your code or by storing your configuration in a .jshintrc file. 
 
 Read more: http://jshint.com/docs/
