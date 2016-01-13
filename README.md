@@ -49,6 +49,7 @@ Read more: http://jshint.com/docs/
 
 ## .travis
 Continuous integration.
+
 Travis CI makes working in a team for a software project easier with automated builds. These builds are triggered automatically when each developer checks in their code to the repository.
 
 Read more: https://docs.travis-ci.com/user/for-beginners & http://code.tutsplus.com/tutorials/travis-ci-what-why-how--net-34771
