@@ -7,7 +7,7 @@
 ## node-mongo-angular-starter-kit
 A starting kit for an app using Node-MongoDB-Angular-Grunt and more...
 
-** [Description root of files](#headers) 
+[Description root of files](#headers) 
 * [Newlines](#newlines)
 - bower install
 - npm install
