@@ -10,6 +10,7 @@ A starting kit app that's using Node-MongoDB-Angular-Grunt and more...
 * [.travis](#travis)
 * [Gruntfile.js](#gruntfile)
 * [bower.json](#bower)
+* [humans.txt](#humans)
 - bower install
 - npm install
 - mongod (turn the MongoDB Server on)
@@ -73,3 +74,7 @@ Packages are defined by a manifest file bower.json. This is similar to Node’s 
 
 Read more: http://bower.io/docs/creating-packages/
 
+## humans
+It's an initiative for knowing the people behind a website. It's a TXT file that contains information about the different people who have contributed to building the website.
+
+Read more: http://humanstxt.org/
