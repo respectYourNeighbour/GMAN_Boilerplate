@@ -1,5 +1,5 @@
-## A Node-MongoDB-Angular-Grunt and more...-starter kit
-A starting kit app that's using Node-MongoDB-Angular-Grunt and more...
+## GMAN-starter kit
+A Grunt-MongoDB-Angular-Node and more... -starting kit app
 
 **[I. Description of configuration root of files](#bowerrc)**
 * [.bowerrc](#bowerrc)
