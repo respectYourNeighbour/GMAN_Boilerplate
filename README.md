@@ -13,14 +13,12 @@ A starting kit app that's using Node-MongoDB-Angular-Grunt and more...
 * [humans.txt](#humans)
 * [package.json](#package)
 * [robots.txt](#robots)
-- bower install
+
+**[2. First step](#firststep)**
+* [bower install](#bower install)
 - npm install
 - mongod (turn the MongoDB Server on)
 - node server.js (start the app)
-
-**[2. First step](#firststep)**
-
-
 
 
 
@@ -91,3 +89,6 @@ Read more: http://gruntjs.com/getting-started
 Web site owners use the /robots.txt file to give instructions about their site to web robots; this is called The Robots Exclusion Protocol.
 
 Read more: http://www.robotstxt.org/robotstxt.html
+
+## firststep
+## bower install
