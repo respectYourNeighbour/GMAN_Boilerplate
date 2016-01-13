@@ -35,7 +35,7 @@ This ensures that all files that git considers to be text will have normalized (
 Read more: http://git-scm.com/docs/gitattributes & https://git-scm.com/book/en/v2/Customizing-Git-Git-Attributes
 
 ## .gitignore
-.gitignore tells git which files (or patterns) it should ignore. It's usually used to avoid committing transient files from your working directory that aren't useful to other collaborators, such as compilation products, temporary files IDEs create, etc.
+It tells git which files (or patterns) it should ignore. It's usually used to avoid committing transient files from your working directory that aren't useful to other collaborators, such as compilation products, temporary files IDEs create, etc.
 
 Read more: https://git-scm.com/docs/gitignore
 
