@@ -12,6 +12,7 @@ A starting kit app that's using Node-MongoDB-Angular-Grunt and more...
 * [bower.json](#bower)
 * [humans.txt](#humans)
 * [package.json](#package)
+* [robots.txt](#robots)
 - bower install
 - npm install
 - mongod (turn the MongoDB Server on)
@@ -84,3 +85,8 @@ Read more: http://humanstxt.org/
 This file is used by npm to store metadata for projects published as npm modules. You will list grunt and the Grunt plugins your project needs as devDependencies in this file.
 
 Read more: http://gruntjs.com/getting-started
+
+## robots
+Web site owners use the /robots.txt file to give instructions about their site to web robots; this is called The Robots Exclusion Protocol.
+
+Read more: http://www.robotstxt.org/robotstxt.html
