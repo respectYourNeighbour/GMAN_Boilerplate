@@ -1,5 +1,5 @@
 ## node-mongo-angular-starter-kit
-A starting kit for an app using Node-MongoDB-Angular-Grunt and more...
+A starting kit app that's using Node-MongoDB-Angular-Grunt and more...
 
 **[Description root of files](#headers)**
 * [.bowerrc](#bowerrc)
