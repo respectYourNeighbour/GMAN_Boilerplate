@@ -11,6 +11,7 @@ A starting kit app that's using Node-MongoDB-Angular-Grunt and more...
 * [Gruntfile.js](#gruntfile)
 * [bower.json](#bower)
 * [humans.txt](#humans)
+* [package.json](#package)
 - bower install
 - npm install
 - mongod (turn the MongoDB Server on)
@@ -78,3 +79,8 @@ Read more: http://bower.io/docs/creating-packages/
 It's an initiative for knowing the people behind a website. It's a TXT file that contains information about the different people who have contributed to building the website.
 
 Read more: http://humanstxt.org/
+
+## package
+This file is used by npm to store metadata for projects published as npm modules. You will list grunt and the Grunt plugins your project needs as devDependencies in this file.
+
+Read more: http://gruntjs.com/getting-started
