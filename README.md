@@ -15,7 +15,7 @@ A starting kit app that's using Node-MongoDB-Angular-Grunt and more...
 * [robots.txt](#robots)
 
 **[2. First step](#bower_install)**
-* [bower install](#bower_install)
+* [ 1. bower install](#bower_install)
 - npm install
 - mongod (turn the MongoDB Server on)
 - node server.js (start the app)
