@@ -1,6 +1,7 @@
 /**************************************
 *************** Modules ***************
-*** get a reference to the modules **** */
+*** get a reference to the modules **** 
+****************************************/
 
 var express        = require('express'); // Express is a library for NodeJS which handles for us a lot of routing and a lot of details of a web application.
 var app            = express(); // We create an instance of our app;
