@@ -60,9 +60,9 @@ The Gruntfile.js or Gruntfile.coffee file is a valid JavaScript or CoffeeScript 
 
 A Gruntfile is comprised of the following parts:
 
--The "wrapper" function
--Project and task configuration
--Loading Grunt plugins and tasks
--Custom tasks
+- The "wrapper" function
+- Project and task configuration
+- Loading Grunt plugins and tasks
+- Custom tasks
 
 Read more: http://gruntjs.com/getting-started
