@@ -17,3 +17,9 @@ A starting kit for an app using Node-MongoDB-Angular-Grunt and more...
 
 
 <a name="bowerrc"/>
+
+
+
+## bowerrc
+
+etc lorem ipsum
