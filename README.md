@@ -94,3 +94,5 @@ Open a CMD on the root folder and execute the following command:
 ~~~ sh
  bower install
 ~~~
+
+This command will install the packages defined in the file bower.json. By default bower installs packages to bower_components/, but in our case it will install the packages in the route defined in the file .bowerrc
