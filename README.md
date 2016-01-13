@@ -91,4 +91,4 @@ Web site owners use the /robots.txt file to give instructions about their site t
 Read more: http://www.robotstxt.org/robotstxt.html
 
 ## firststep
-## [robots.txt]bower install
+*[robots.txt] bower install
