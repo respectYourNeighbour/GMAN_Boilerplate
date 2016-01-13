@@ -8,7 +8,8 @@ A starting kit app that's using Node-MongoDB-Angular-Grunt and more...
 * [.gitignore](#gitignore)
 * [.jshintrc](#jshintrc)
 * [.travis](#travis)
-* [.Gruntfile](#gruntfile)
+* [Gruntfile](#gruntfile)
+* [bower](#bower)
 - bower install
 - npm install
 - mongod (turn the MongoDB Server on)
@@ -66,3 +67,9 @@ A Gruntfile is comprised of the following parts:
 - Custom tasks
 
 Read more: http://gruntjs.com/getting-started
+
+## bower
+Packages are defined by a manifest file bower.json. This is similar to Node’s package.json or Ruby’s Gemfile.
+
+Read more: http://bower.io/docs/creating-packages/
+
