@@ -5,6 +5,7 @@ A starting kit app that's using Node-MongoDB-Angular-Grunt and more...
 * [.bowerrc](#bowerrc)
 * [.editorconfig](#editorconfig)
 * [.gitattributes](#gitattributes)
+* [.gitignore](#gitignore)
 - bower install
 - npm install
 - mongod (turn the MongoDB Server on)
@@ -32,4 +33,9 @@ If you want to interoperate with a source code management system that enforces e
 This ensures that all files that git considers to be text will have normalized (LF) line endings in the repository.
 
 Read more: http://git-scm.com/docs/gitattributes & https://git-scm.com/book/en/v2/Customizing-Git-Git-Attributes
+
+## .gitignore
+.gitignore tells git which files (or patterns) it should ignore. It's usually used to avoid committing transient files from your working directory that aren't useful to other collaborators, such as compilation products, temporary files IDEs create, etc.
+
+Read more: https://git-scm.com/docs/gitignore
 
