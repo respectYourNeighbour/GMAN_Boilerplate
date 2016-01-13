@@ -8,8 +8,8 @@ A starting kit app that's using Node-MongoDB-Angular-Grunt and more...
 * [.gitignore](#gitignore)
 * [.jshintrc](#jshintrc)
 * [.travis](#travis)
-* [Gruntfile](#gruntfile)
-* [bower](#bower)
+* [Gruntfile.js](#gruntfile)
+* [bower.json](#bower)
 - bower install
 - npm install
 - mongod (turn the MongoDB Server on)
