@@ -18,6 +18,7 @@ A starting kit app that's using Node-MongoDB-Angular-Grunt and more...
 
 ## .bowerrc
 It is a bower configuration file (.json); 
+
 Read more: http://bower.io/docs/config/
 
 ## .editorconfig
