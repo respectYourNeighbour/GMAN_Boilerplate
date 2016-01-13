@@ -20,10 +20,10 @@ A starting kit app that's using Node-MongoDB-Angular-Grunt and more...
 
 
 
-<a name="bowerrc"/>
 
 
 
+## headers
 ## .bowerrc
 It is a bower configuration file (.json); 
 
