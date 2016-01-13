@@ -1,9 +1,3 @@
-##### Table of Contents  
-[Headers](#headers)  
-[Emphasis](#emphasis)  
-...snip...    
-<a name="headers"/>
-
 ## node-mongo-angular-starter-kit
 A starting kit for an app using Node-MongoDB-Angular-Grunt and more...
 
