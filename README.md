@@ -8,6 +8,7 @@
 A starting kit for an app using Node-MongoDB-Angular-Grunt and more...
 
 [Description root of files](#headers) 
+#[Description root of files](#headers)
 - bower install
 - npm install
 - mongod (turn the MongoDB Server on)
