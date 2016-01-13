@@ -90,7 +90,7 @@ Web site owners use the /robots.txt file to give instructions about their site t
 Read more: http://www.robotstxt.org/robotstxt.html
 
 ## bower_install
-Open a CMD on the root folder and do an:
+Open a CMD on the root folder and execute the following command:
 ~~~ sh
  bower install
 ~~~
