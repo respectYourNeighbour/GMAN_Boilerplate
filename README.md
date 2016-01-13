@@ -15,7 +15,7 @@ A starting kit app that's using Node-MongoDB-Angular-Grunt and more...
 * [robots.txt](#robots)
 
 **[2. First step](#firststep)**
-* [bower install](#bower install)
+* [bower install](#bower_install)
 - npm install
 - mongod (turn the MongoDB Server on)
 - node server.js (start the app)
@@ -91,4 +91,4 @@ Web site owners use the /robots.txt file to give instructions about their site t
 Read more: http://www.robotstxt.org/robotstxt.html
 
 ## firststep
-*[robots.txt] bower install
+## bowerinstall
