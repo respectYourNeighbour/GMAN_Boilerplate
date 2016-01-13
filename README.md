@@ -7,6 +7,7 @@ A starting kit app that's using Node-MongoDB-Angular-Grunt and more...
 * [.gitattributes](#gitattributes)
 * [.gitignore](#gitignore)
 * [.jshintrc](#jshintrc)
+* [.travis.yml](#travis.yml)
 - bower install
 - npm install
 - mongod (turn the MongoDB Server on)
@@ -41,6 +42,12 @@ It tells git which files (or patterns) it should ignore. It's usually used to av
 Read more: https://git-scm.com/docs/gitignore
 
 ## .jshintrc
+JSHint is a program that flags suspicious usage in programs written in JavaScript.
+You can define configuration for jshint in two ways. Either by adding special comments to your code or by storing your configuration in a .jshintrc file. 
+
+Read more: http://jshint.com/docs/
+
+## .travis.yml
 JSHint is a program that flags suspicious usage in programs written in JavaScript.
 You can define configuration for jshint in two ways. Either by adding special comments to your code or by storing your configuration in a .jshintrc file. 
 
