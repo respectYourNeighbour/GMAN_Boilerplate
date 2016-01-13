@@ -15,5 +15,4 @@ A starting kit app that's using Node-MongoDB-Angular-Grunt and more...
 
 
 ## bowerrc
-
-etc lorem ipsum
+Bower .json configuration file. Read more: http://bower.io/docs/config/
