@@ -8,6 +8,7 @@ A starting kit app that's using Node-MongoDB-Angular-Grunt and more...
 * [.gitignore](#gitignore)
 * [.jshintrc](#jshintrc)
 * [.travis](#travis)
+* [.Gruntfile](#gruntfile)
 - bower install
 - npm install
 - mongod (turn the MongoDB Server on)
@@ -53,3 +54,15 @@ Continuous integration.
 Travis CI makes working in a team for a software project easier with automated builds. These builds are triggered automatically when each developer checks in their code to the repository.
 
 Read more: https://docs.travis-ci.com/user/for-beginners & http://code.tutsplus.com/tutorials/travis-ci-what-why-how--net-34771
+
+## Gruntfile
+The Gruntfile.js or Gruntfile.coffee file is a valid JavaScript or CoffeeScript file that belongs in the root directory of your project, next to the package.json file, and should be committed with your project source.
+
+A Gruntfile is comprised of the following parts:
+
+-The "wrapper" function
+-Project and task configuration
+-Loading Grunt plugins and tasks
+-Custom tasks
+
+Read more: http://gruntjs.com/getting-started
