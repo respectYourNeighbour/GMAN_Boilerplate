@@ -1,7 +1,7 @@
 ## node-mongo-angular-starter-kit
 A starting kit app that's using Node-MongoDB-Angular-Grunt and more...
 
-**[Description of configuration root of files](#headers)**
+**[1. Description of configuration root of files](#headers)**
 * [.bowerrc](#bowerrc)
 * [.editorconfig](#editorconfig)
 * [.gitattributes](#gitattributes)
@@ -18,7 +18,7 @@ A starting kit app that's using Node-MongoDB-Angular-Grunt and more...
 - mongod (turn the MongoDB Server on)
 - node server.js (start the app)
 
-**[1'st step](#firststep)**
+**[2. First step](#firststep)**
 
 
 
