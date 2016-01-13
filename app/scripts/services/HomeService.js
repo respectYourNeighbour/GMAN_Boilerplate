@@ -26,7 +26,7 @@ angular.module('HomeServiceModule', []).factory('HomeService', ['$http', functio
 
         // call to EDIT by ID a entry
         update : function(obj) {
-            return $http.put('/api/editPost', {obj}).success(function(data) {
+            return $http.put('/api/editPost', {obj:obj}).success(function(data) {
                 console.log('successfuly editted: '+data);
             });
         }
