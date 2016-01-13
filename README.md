@@ -7,7 +7,7 @@ A starting kit app that's using Node-MongoDB-Angular-Grunt and more...
 * [.gitattributes](#gitattributes)
 * [.gitignore](#gitignore)
 * [.jshintrc](#jshintrc)
-* [.travis.yml](#travis.yml)
+* [.travis](#travis)
 - bower install
 - npm install
 - mongod (turn the MongoDB Server on)
@@ -47,8 +47,8 @@ You can define configuration for jshint in two ways. Either by adding special co
 
 Read more: http://jshint.com/docs/
 
-## .travis.yml
-JSHint is a program that flags suspicious usage in programs written in JavaScript.
-You can define configuration for jshint in two ways. Either by adding special comments to your code or by storing your configuration in a .jshintrc file. 
+## .travis
+Continuous integration.
+Travis CI makes working in a team for a software project easier with automated builds. These builds are triggered automatically when each developer checks in their code to the repository.
 
-Read more: http://jshint.com/docs/
+Read more: https://docs.travis-ci.com/user/for-beginners & http://code.tutsplus.com/tutorials/travis-ci-what-why-how--net-34771
