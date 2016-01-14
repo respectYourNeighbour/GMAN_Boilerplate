@@ -1,7 +1,7 @@
 {
   // Setting
   "node": true,
-  "browser": true, // Standard browser globals e.g. `window`, `document`.
+  "browser": true, /* Standard browser globals e.g. `window`, `document`.*/
   "esnext": true,
   "bitwise": true, // Prohibit bitwise operators (&, |, ^, etc.).
   "camelcase": true,
