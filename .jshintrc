@@ -1,23 +1,22 @@
 {
-  // Setting
   "node": true,
-  "browser": true, /* Standard browser globals e.g. `window`, `document`.*/
+  "browser": true,
   "esnext": true,
-  "bitwise": true, // Prohibit bitwise operators (&, |, ^, etc.).
+  "bitwise": true,
   "camelcase": true,
-  "curly": true, // Require {} for every new block or scope.
-  "eqeqeq": true, // Require triple equals i.e. `===`.
-  "immed": true, // Require immediate invocations to be wrapped in parens e.g. `( function(){}() );`
-  "indent": 4, // Specify indentation spacing
-  "latedef": true, // Prohipit variable use before definition.
-  "newcap": true, // Require capitalization of all constructor functions e.g. `new F()`.
-  "noarg": true, // Prohibit use of `arguments.caller` and `arguments.callee`.
+  "curly": true,
+  "eqeqeq": true,
+  "immed": true,
+  "indent": 4,
+  "latedef": true,
+  "newcap": true,
+  "noarg": true,
   "quotmark": "single",
-  "regexp": true, // Prohibit `.` and `[^...]` in regular expressions.
-  "undef": true, // Require all non-global variables be declared before they are used.
+  "regexp": true,
+  "undef": true,
   "unused": true,
-  "strict": true, // Require `use strict` pragma  in every file.
-  "trailing": true, // Prohibit trailing whitespaces.
+  "strict": true,
+  "trailing": true,
   "smarttabs": true,
   "globals": {
     "angular": false,
