@@ -1,6 +1,8 @@
 'use strict';
 
-angular.module('Menu1Ctrl', []).controller('Menu1Controller', function($scope, HomeService, $filter) {
+angular
+    .module('sampleApp')
+    .controller('Menu1Controller', function($scope, HomeService, $filter) {
 
     console.log('Menu 1  Controller');
 

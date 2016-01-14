@@ -11,7 +11,8 @@ angular
 			'ngRoute', 
 			'HomeServiceModule', 
 			'ngMaterial',
-			'pascalprecht.translate', 
+			'pascalprecht.translate',
+			'ngCookies', 
 			'angularUtils.directives.dirPagination'
 	])
 	.config(function ($routeProvider, $translateProvider) {

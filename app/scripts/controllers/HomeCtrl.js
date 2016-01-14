@@ -1,6 +1,8 @@
 'use strict';
 
-angular.module('HomeCtrl', []).controller('HomeController', function($scope) {
-    console.log('Home Controller');
-    $scope.WelcomeMessage = 'Welcome Home!';  
+angular
+	.module('sampleApp')
+	.controller('HomeController', function($scope) {
+    	console.log('Home Controller');
+    	$scope.WelcomeMessage = 'Welcome Home!';  
 });
