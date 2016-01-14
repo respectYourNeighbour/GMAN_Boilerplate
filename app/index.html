@@ -10,7 +10,6 @@
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <!-- build:css(.) styles/vendor.css -->
         <!-- bower:css -->
-        <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
         <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
         <!-- endbower -->
         <!-- endbuild -->
@@ -89,12 +88,17 @@
         <script src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
         <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
         <script src="bower_components/angular-aria/angular-aria.js"></script>
-        <script src="bower_components/angular-material/angular-material.js"></script>
         <script src="bower_components/angular-utils-pagination/dirPagination.js"></script>
+        <script src="bower_components/angular-material/angular-material.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
         
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <!--*********************** 
+        ******* ANGULAR APP *******
+        *************************** -->
+        <!--      App JS        --> <script src="scripts/app.js"></script>
+
         <!--******************************* 
         ******* ANGULAR CONTROLLERS *******
         *********************************** -->
@@ -104,20 +108,13 @@
         <!-- Menu 3 Controller  --> <script src="scripts/controllers/Menu3Ctrl.js"></script>
         <!-- Menu 4 Controller  --> <script src="scripts/controllers/Menu4Ctrl.js"></script>
         <!-- Menu 5 Controller  --> <script src="scripts/controllers/Menu5Ctrl.js"></script>
+        
         <!--**************************** 
         ******* ANGULAR SERVICES *******
         ******************************** -->
         <!--  Suedeza Service   --> <script src="scripts/services/HomeService.js"></script>
-        
-        <!--************************** 
-        ******* ANGULAR ROUTES *******
-        ****************************** -->
-        <!--    App Routes      --> <script src="scripts/appRoutes.js"></script>
 
-        <!--*********************** 
-        ******* ANGULAR APP *******
-        *************************** -->
-        <!--      App JS        --> <script src="scripts/app.js"></script>
+        
         <!-- endbuild -->
     </body>
 </html>

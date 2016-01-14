@@ -14,7 +14,7 @@ var methodOverride = require('method-override');
 /********************************************
 *************** Configuration ***************
 ********************************************* */
-var port = process.env.PORT || 8083; // We set the port on which our application will run.
+var port = process.env.PORT || 3000; // We set the port on which our application will run.
 
 MongoClient.connect('mongodb://localhost:27017/NMAstarterkit', function (err, db) {
     "use strict" //
@@ -26,7 +26,7 @@ MongoClient.connect('mongodb://localhost:27017/NMAstarterkit', function (err, db
 	app.use(bodyParser.urlencoded({ extended: true })); // parse application/x-www-form-urlencoded
 
 	app.use(methodOverride('X-HTTP-Method-Override')); // override with the X-HTTP-Method-Override header in the request. simulate DELETE/PUT
-	app.use(express.static(__dirname + '/app')); // We set the static files location '/app'
+	app.use(express.static(__dirname + '/dist')); //We set the static files location '/app'
 
 	// routes ==================================================
 	require('./routes')(app, db); // We are passing our application into our routes;

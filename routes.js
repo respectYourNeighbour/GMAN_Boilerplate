@@ -3,7 +3,7 @@ var mongodb = require('mongodb');
 module.exports = function(app, db) {
 
     // Connect to a collection from our database;
-    var posts = db.collection("temporary");
+    var posts = db.collection("NMAstarterkit");
 
     /****************************************************************************************************
     ** SERVER ROUTES
@@ -89,7 +89,7 @@ module.exports = function(app, db) {
     ** And from inside this index.html file Angular will take over.
     ***************************************************************************************************** */
     app.get('*', function(req, res) {
-        res.sendfile('./app/index.html'); // Load our 'public/index.html' file.
+        res.sendfile('./dist/index.html'); // Load our 'public/index.html' file.
     });
 
 };
