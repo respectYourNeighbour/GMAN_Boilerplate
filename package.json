@@ -1,12 +1,12 @@
 {
-	"name" : "Node_Mongo_Angular_Boilerplate",
+	"name" : "GMAN",
 	"version" : "0.0.0",
 	"license" : "BSD-3-Clause",
-	"description": "Node Mongo Angular Starter Kit",
-	"author": "Luca Filip",
+	"description": "Grunt MongoDB Angular NodeJS-starting kit",
+	"author": "respectYourNeighbour",
 	"repository" :	{ 
 	 	"type" : "git", 
-	 	"url" : "https://github.com/respectYourNeighbour/node-mongo-angular-starter-kit"
+	 	"url" : "https://github.com/respectYourNeighbour/GMAN_Boilerplate"
 	},
 	"keywords": 	[
 	    "Node",
