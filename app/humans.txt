@@ -2,14 +2,25 @@
 # The humans responsible & technology colophon
 
 # TEAM
-
-    <name> -- <role> -- <twitter>
+    	Chef:Luca Filip
+	UI developer:Luca Filip
+	From:Romania
 
 # THANKS
-
-    <name>
+	Developer: Mathias Bynens
+	Contact: https://mathiasbynens.be/
+	Project: https://html5boilerplate.com/
+	
+	Developer: Mathias Bynens
+	Contact: https://drublic.de/
+	Project: https://html5boilerplate.com/
 
 # TECHNOLOGY COLOPHON
+    	CSS3, HTML5
+    	Apache Server Configs, jQuery, Modernizr, Normalize.css, Bootstrap, Font-awesome, NodeJS, MongoDB, Angular, Grunt, Bower
 
-    CSS3, HTML5
-    Apache Server Configs, jQuery, Modernizr, Normalize.css
+/* SITE */
+	Last update:2016/02/04
+	Language: English
+	Doctype:HTML5
+	IDE: Sublime Text, Notepad++
