@@ -9,8 +9,6 @@
 angular
 	.module('sampleApp', [
 			'ngRoute', 
-			'HomeServiceModule', 
-			'ngMaterial',
 			'pascalprecht.translate',
 			'ngCookies', 
 			'angularUtils.directives.dirPagination'
