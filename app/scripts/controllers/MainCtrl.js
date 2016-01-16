@@ -6,7 +6,7 @@
     'use strict';
 
     function mainCtrl($scope, $translate) {
-        console.log('Menu 5  Controller');
+        console.log('Main Controller');
         $scope.message = 'hi!'; 
 
         $scope.changeLanguage = function (langKey) {
