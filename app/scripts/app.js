@@ -11,7 +11,8 @@ angular
 			'ngRoute', 
 			'pascalprecht.translate',
 			'ngCookies', 
-			'angularUtils.directives.dirPagination'
+			'angularUtils.directives.dirPagination',
+			'cgBusy'
 	])
 	.config(function ($routeProvider, $translateProvider) {
         $routeProvider
