@@ -9,6 +9,7 @@
 angular
 	.module('sampleApp', [
 			'ngRoute', 
+			'ngAnimate',
 			'pascalprecht.translate',
 			'ngCookies', 
 			'angularUtils.directives.dirPagination',

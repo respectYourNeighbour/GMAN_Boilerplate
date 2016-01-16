@@ -18,6 +18,7 @@
         <!-- endbuild -->
     </head>
 
+
     <body ng-app="sampleApp" ng-controller="MainController">
 
         <button ng-click="changeLanguage('de')" translate="BUTTON_LANG_DE"></button>
@@ -46,6 +47,26 @@
             <!-- Angular dynamic content -->
             <div ng-view></div>
         </div>
+
+        <div class="m-app-loading" ng-animate-children>
+            <!-- BEGIN: Actual animated container. -->
+            <div class="animated-container">
+                <div class="messaging">
+
+                    <h1>
+                        App is Loading
+                    </h1>
+
+                    <p>
+                        Please stand by for your ticket to awesome-town!
+                    </p>
+
+                </div>
+        </div>
+        <!-- END: Actual animated container. -->
+
+    </div>
+    <!-- END: App-Loading Screen. -->
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
         <script>
@@ -121,6 +142,10 @@
         ******************************** -->
         <!--  Suedeza Service   --> <script src="scripts/services/HomeService.js"></script>
 
+        <!--**************************** 
+        ****** ANGULAR DIRECTIVE ******
+        ******************************** -->
+        <!--  Suedeza Service   --> <script src="scripts/directives/firstLoad.js"></script>
         
         <!-- endbuild -->
     </body>
