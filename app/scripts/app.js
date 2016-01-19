@@ -10,6 +10,7 @@ angular
 	.module('sampleApp', [
 			'ngRoute', 
 			'ngAnimate',
+            'templates-main',
 			'pascalprecht.translate',
 			'ngCookies', 
 			'angularUtils.directives.dirPagination',
