@@ -92,16 +92,16 @@ module.exports = function (grunt) {
       },
       proxies: [
         {
-          context: '/arc',
+          context: '/api',
           host: 'localhost',
           changeOrigin: false,
           https: false,
           port: 8080
         },
         {
-          context: '/arc/login',
-          host: 'www.it-trans.org',
-          changeOrigin: true,
+          context: '/auth',
+          host: 'localhost',
+          changeOrigin: false,
           https: false,
           port: 8080
         }
@@ -500,7 +500,6 @@ module.exports = function (grunt) {
   grunt.registerTask('default', [
     'newer:jshint',
 //    'test',
-    'build',
-    'copy:spring'
+    'build'
   ]);
 };

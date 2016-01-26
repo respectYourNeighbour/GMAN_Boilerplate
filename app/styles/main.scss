@@ -1,6 +1,5 @@
 $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
 // bower:scss
-@import "bootstrap-sass-official/assets/stylesheets/bootstrap.scss";
 @import "font-awesome/scss/font-awesome.scss";
 // endbower
 
@@ -282,8 +281,8 @@ div.m-app-loading div.animated-container {
 /* Used to initialize the ng-leave animation state. */
 div.m-app-loading div.animated-container.ng-leave {
   opacity: 1.0 ;
-  transition: all linear 1000ms ;
-      -webkit-transition: all linear 1000ms ;
+  transition: all linear 500ms ;
+      -webkit-transition: all linear 500ms ;
 }
 /* Used to set the end properties of the ng-leave animation state. */
 div.m-app-loading div.animated-container.ng-leave-active {

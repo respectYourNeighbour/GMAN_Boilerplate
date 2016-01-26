@@ -5,18 +5,21 @@
 (function() {
     'use strict';
 
-    function mainCtrl($scope, $translate) {
+    function mainCtrl($scope, $translate, AuthenticationService) {
         console.log('Main Controller');
-        $scope.message = 'hi!'; 
+        $scope.message = 'hi!';
 
         $scope.changeLanguage = function (langKey) {
             console.log('changeLanguage');
             $translate.use(langKey);
         };
+        $scope.isAuthenticated = function() {
+          return AuthenticationService.isAuthenticated();
+        };
     }
 
     angular
         .module('sampleApp')
-        .controller('MainController',  ['$scope', '$translate', mainCtrl]);
+        .controller('MainController',  ['$scope', '$translate', 'AuthenticationService', mainCtrl]);
 
 }());

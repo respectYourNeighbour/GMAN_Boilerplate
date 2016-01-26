@@ -11,10 +11,12 @@
         <!-- build:css(.) styles/vendor.css -->
         <!-- bower:css -->
         <link rel="stylesheet" href="bower_components/angular-busy/dist/angular-busy.css" />
+        <link rel="stylesheet" href="bower_components/angular-toastr/dist/angular-toastr.css" />
         <!-- endbower -->
         <!-- endbuild -->
         <!-- build:css(.tmp) styles/main.css -->
         <link rel="stylesheet" href="styles/main.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
         <!-- endbuild -->
     </head>
 
@@ -28,24 +30,48 @@
 
 
         <div class="container">
-        
+
             <nav class="navbar navbar-inverse">
                 <div class="navbar-header">
-                    <a class="navbar-brand" ng-href="#/">Home</a>
+                    <a class="navbar-brand" ui-sref="/">Home</a>
                 </div>
 
                 <!-- Link to our pages. Angular handles the routing here. -->
                 <ul class="nav navbar-nav">
-                    <li><a ng-href="#menu1">Menu 1</a></li>
-                    <li><a ng-href="#menu2">Menu 2</a></li>
-                    <li><a ng-href="#menu3">Menu 3</a></li>
-                    <li><a ng-href="#menu4">Menu 4</a></li>
-                    <li><a ng-href="#menu5">Menu 5</a></li>
+                    <li><a ui-sref="menu1">Menu 1</a></li>
+                    <li><a ui-sref="menu2">Menu 2</a></li>
+                    <li><a ui-sref="menu3">Menu 3</a></li>
+                    <li><a ui-sref="menu4">Menu 4</a></li>
+                    <li><a ui-sref="menu5">Menu 5</a></li>
+                    <li><a ui-sref="login">Login</a></li>
+                    <li class="dropdown">
+                        <a id="drop2" class="dropdown-toggle" aria-expanded="false" aria-haspopup="true" role="button" data-toggle="dropdown" data-target="#" href="#">
+                            Connect <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="drop2" ng-if="!isAuthenticated()">
+                            <li>
+                                <a ui-sref="login">Login</a>
+                            </li>
+                            <li class="divider" role="separator"></li>
+                            <li>
+                                <a ui-sref="signup">Sign up</a>
+                            </li>
+                        </ul>
+                        <ul class="dropdown-menu" aria-labelledby="drop2" ng-if="isAuthenticated()">
+                            <li>
+                                <a ui-sref="logout">Logout</a>
+                            </li>
+                            <li class="divider" role="separator"></li>
+                            <li>
+                                <a ui-sref="profile">Profile</a>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </nav>
 
             <!-- Angular dynamic content -->
-            <div ng-view></div>
+            <div ui-view></div>
         </div>
 
         <div class="m-app-loading" ng-animate-children>
@@ -91,18 +117,6 @@
         <script src="bower_components/jquery/dist/jquery.js"></script>
         <script src="bower_components/angular/angular.js"></script>
         <script src="bower_components/json3/lib/json3.min.js"></script>
-        <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/affix.js"></script>
-        <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/alert.js"></script>
-        <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/button.js"></script>
-        <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/carousel.js"></script>
-        <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/collapse.js"></script>
-        <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/dropdown.js"></script>
-        <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tab.js"></script>
-        <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/transition.js"></script>
-        <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/scrollspy.js"></script>
-        <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/modal.js"></script>
-        <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tooltip.js"></script>
-        <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/popover.js"></script>
         <script src="bower_components/angular-resource/angular-resource.js"></script>
         <script src="bower_components/angular-cookies/angular-cookies.js"></script>
         <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
@@ -116,21 +130,24 @@
         <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
         <script src="bower_components/angular-utils-pagination/dirPagination.js"></script>
         <script src="bower_components/angular-busy/dist/angular-busy.js"></script>
+        <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+        <script src="bower_components/satellizer/satellizer.js"></script>
+        <script src="bower_components/angular-toastr/dist/angular-toastr.tpls.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
-        
+
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <!--*********************** 
+        <!--***********************
         ******* TEMPLATES JS ******
         *************************** -->
         <!--     Templates      --> <script src="templates.js"></script>
-        
-        <!--*********************** 
+
+        <!--***********************
         ******* ANGULAR APP *******
         *************************** -->
         <!--      App JS        --> <script src="scripts/app.js"></script>
 
-        <!--******************************* 
+        <!--*******************************
         ******* ANGULAR CONTROLLERS *******
         *********************************** -->
         <!-- Home  Controller   --> <script src="scripts/controllers/MainCtrl.js"></script>
@@ -140,18 +157,23 @@
         <!-- Menu 3 Controller  --> <script src="scripts/controllers/Menu3Ctrl.js"></script>
         <!-- Menu 4 Controller  --> <script src="scripts/controllers/Menu4Ctrl.js"></script>
         <!-- Menu 5 Controller  --> <script src="scripts/controllers/Menu5Ctrl.js"></script>
-        
+        <!-- Login Controller   --> <script src="scripts/controllers/LoginCtrl.js"></script>
+        <!-- Signup Controller  --> <script src="scripts/controllers/SignupCtrl.js"></script>
+        <!-- Logout Controller  --> <script src="scripts/controllers/LogoutCtrl.js"></script>
+        <!-- Profile Controller --> <script src="scripts/controllers/ProfileCtrl.js"></script>
 
-        <!--**************************** 
+
+        <!--****************************
         ******* ANGULAR SERVICES *******
         ******************************** -->
         <!--  Suedeza Service   --> <script src="scripts/services/HomeService.js"></script>
+        <!--  Auth Service      --> <script src="scripts/services/AuthenticationService.js"></script>
 
-        <!--**************************** 
+        <!--****************************
         ****** ANGULAR DIRECTIVE ******
         ******************************** -->
         <!--  Suedeza Service   --> <script src="scripts/directives/firstLoad.js"></script>
-        
+
         <!-- endbuild -->
     </body>
 </html>

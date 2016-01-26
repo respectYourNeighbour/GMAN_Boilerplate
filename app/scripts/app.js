@@ -5,47 +5,102 @@
  *
  * Main module of the application.
  */
-
 angular
 	.module('sampleApp', [
-			'ngRoute', 
+			'ui.router',
 			'ngAnimate',
             'templates-main',
 			'pascalprecht.translate',
-			'ngCookies', 
+			'ngCookies',
 			'angularUtils.directives.dirPagination',
-			'cgBusy'
+			'cgBusy',
+			'satellizer',
+			'toastr'
 	])
-	.config(function ($routeProvider, $translateProvider) {
-        $routeProvider
+	.config(function ($stateProvider, $translateProvider, $urlRouterProvider) {
+		function skipIfLoggedIn($q, $auth) {
+      		var deferred = $q.defer();
+      		if ($auth.isAuthenticated()) {
+      			console.log('skipIfLoggedIn');
+        		deferred.reject();
+      		} else {
+        		deferred.resolve();
+      		}
+      		return deferred.promise;
+    	}
+
+	    function loginRequired($q, $location, $auth) {
+	      	var deferred = $q.defer();
+	      	if ($auth.isAuthenticated()) {
+	        	deferred.resolve();
+	      	} else {
+	      		console.log('loginRequired');
+	        	$location.path('/login');
+	      	}
+	      	return deferred.promise;
+	    }
+
+        $stateProvider
             // home page
-	        .when('/', {
+	        .state('/', {
 	            templateUrl: 'views/home.html',
 	            controller: 'HomeController'
 	        })
-	        .when('/menu1', {
+	        .state('menu1', {
 	            templateUrl: 'views/menu1.html',
+	            url : '/menu1',
 	            controller: 'Menu1Controller'
 	        })
-	        .when('/menu2', {
+	        .state('menu2', {
 	            templateUrl: 'views/menu2.html',
+	            url : '/menu2',
 	            controller: 'Menu2Controller'
 	        })
-	        .when('/menu3', {
+	        .state('menu3', {
 	            templateUrl: 'views/menu3.html',
+	            url : '/menu3',
 	            controller: 'Menu3Controller'
 	        })
-	        .when('/menu4', {
+	        .state('menu4', {
 	            templateUrl: 'views/menu4.html',
+	            url : '/menu4',
 	            controller: 'Menu4Controller'
 	        })
-	        .when('/menu5', {
+	        .state('menu5', {
 	            templateUrl: 'views/menu5.html',
+	            url : '/menu5',
 	            controller: 'Menu5Controller'
 	        })
-	        .otherwise({
-                redirectTo: '/'
-            });
+	        .state('login', {
+	            templateUrl: 'views/login.html',
+	            url : '/login',
+	            controller: 'LoginController',
+		        resolve: {
+		          	skipIfLoggedIn: skipIfLoggedIn
+		        }
+	        })
+	        .state('signup', {
+	            templateUrl: 'views/signup.html',
+	            url : '/signup',
+	            controller: 'SignupController',
+		        resolve: {
+		          	skipIfLoggedIn: skipIfLoggedIn
+		        }
+	        })
+	        .state('logout', {
+	            template : null,
+	            url : '/logout',
+	            controller: 'LogoutController'
+	        })
+	        .state('profile', {
+	            templateUrl: 'views/profile.html',
+	            url : '/profile',
+	            controller: 'ProfileController',
+		        resolve: {
+		          	loginRequired: loginRequired
+		        }
+	        });
+	        $urlRouterProvider.otherwise('/');
         //Translations
         $translateProvider
 
@@ -66,5 +121,4 @@ angular
             .determinePreferredLanguage()
             // remember language
             .useLocalStorage();
-
     });
