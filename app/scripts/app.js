@@ -61,15 +61,36 @@ angular
 	            url : '/menu3',
 	            controller: 'Menu3Controller'
 	        })
-	        .state('menu4', {
-	            templateUrl: 'views/menu4.html',
-	            url : '/menu4',
-	            controller: 'Menu4Controller'
+	        .state('messages', {
+		        abstract: true,
+		        url: '/messages',
+		        template: '<ui-view/>'
+		    })
+	        .state('messages.list', {
+	            templateUrl: 'views/messages.html',
+	            url : '',
+	            controller: 'MessagesController',
+		        resolve: {
+		          	unreadMessages : function(ContactService) {
+		          		return ContactService.getUnreadMessages();
+		          	}
+		        }
 	        })
-	        .state('menu5', {
-	            templateUrl: 'views/menu5.html',
-	            url : '/menu5',
-	            controller: 'Menu5Controller'
+	        .state('messages.view', {
+	        	url: '/:messageId',
+	        	templateUrl: 'views/messageView.html',
+	        	controller: 'MessageViewController',
+	        	resolve: {
+	          		message: function(ContactService,$stateParams) {
+	          			console.log('$stateParams',$stateParams);
+	          			return ContactService.getMessage($stateParams.messageId);
+	          		}
+	        	}
+	      	})
+	        .state('contact', {
+	            templateUrl: 'views/contact.html',
+	            url : '/contact',
+	            controller: 'ContactController'
 	        })
 	        .state('login', {
 	            templateUrl: 'views/login.html',

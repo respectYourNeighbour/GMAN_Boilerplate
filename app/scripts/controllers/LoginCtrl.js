@@ -5,13 +5,20 @@
 (function() {
     'use strict';
 
-    function loginCtrl($scope, $auth, $location, $state, toastr, AuthenticationService) {
+    function loginCtrl($scope, $auth, $location, $state, toastr, AuthenticationService, ContactService) {
         console.log('Login  Controller');
 
         $scope.login = function() {
         AuthenticationService.login($scope.user)
             .then(function() {
                 toastr.success('You have successfully signed in');
+                ContactService.getNumberOfUnreadMessages().then(function(data) {
+                    console.log('data',data);
+                    if(data.data > 0) {
+                        toastr.success('You have ' + data.data + ' unread messages');
+                        $state.go('messages');
+                    }
+                });
                 $state.go('profile');
             }).catch(function(response) {
                 toastr.error(response.data.message, response.status);
@@ -33,5 +40,5 @@
 
     angular
         .module('sampleApp')
-        .controller('LoginController', ['$scope', '$auth', '$location', '$state', 'toastr', 'AuthenticationService', loginCtrl]);
+        .controller('LoginController', ['$scope', '$auth', '$location', '$state', 'toastr', 'AuthenticationService', 'ContactService', loginCtrl]);
 }());

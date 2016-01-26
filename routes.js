@@ -1,8 +1,10 @@
 var mongodb = require('mongodb');
 var User = require('./models/user')
+var Message = require('./models/message')
 var jwt = require('jwt-simple');
 var moment = require('moment');
 var config = require('./config')
+var mongoose = require('mongoose');
 module.exports = function(app, db) {
     // Connect to a collection from our database;
     var posts = db.collection("NMAstarterkit");
@@ -45,6 +47,41 @@ module.exports = function(app, db) {
             exp: moment().add(14, 'days').unix()
         };
         return jwt.encode(payload, config.TOKEN_SECRET);
+    }
+
+    app.param('messageId', messageById);
+
+    app.get('/api/message/:messageId', function(req, res){
+        console.log('get message messageId');
+        console.log('req.message',req.message)
+        res.json(req.message);
+    })
+
+
+
+    function messageById(req, res, next, id) {
+        console.log('id',id);
+        if (!mongoose.Types.ObjectId.isValid(id)) {
+             console.log('!Valid');
+            return res.status(400).send({
+              message: 'Article is invalid'
+            });
+          } else {
+            console.log('Valid');
+          Message.findById(id, function(err, message) {
+            if (err) {
+              return next(err);
+            } else if (!message) {
+                console.log('!message');
+              return res.status(404).send({
+                message: 'No article with that identifier has been found'
+              });
+            }
+            console.log('message',message);
+            req.message = message;
+            next();
+        })
+      }
     }
 
     /****************************************************************************************************
@@ -91,6 +128,64 @@ module.exports = function(app, db) {
       });
     });
 
+    // API route to insert a new entry.
+    app.post('/api/newMessage', function(req, res, next) {
+
+        console.log('req.body',req.body);
+        var message = new Message({
+            from: req.body.from,
+            date: req.body.date,
+            subject: req.body.subject,
+            body: req.body.body
+        })
+
+        Message.create(message, function (err, inserted) {
+            if(err) {
+                console.log(err.message);
+                return db.close();
+            }
+            console.log("inserted",inserted);
+            res.json(inserted);
+            console.dir("Successfully inserted: "+ JSON.stringify(inserted));
+            //JSON.stringify is to actually get the json representation of this JavaScript object.
+
+        });
+    });
+
+    app.get('/api/unreadMessages', function(req, res) {
+
+        // use mongoDB Driver to get all bancs in the database;
+        Message.findUnreadMessages(function(err, items) {
+            "use strict";
+
+            if (err) throw err;
+
+            console.log("Found " + items.length + " definitii");
+            console.log('items',items);
+
+            res.json(items);
+        });
+    });
+    app.get('/api/numberOfUnreadMessages', function(req, res) {
+
+        // use mongoDB Driver to get all bancs in the database;
+        Message.findUnreadMessages(function(err, items) {
+            "use strict";
+
+            if (err) throw err;
+
+            console.log("Found " + items.length + " definitii");
+            console.log('items',items);
+
+            res.json(items.length);
+        });
+    });
+
+
+
+
+
+
 
     /****************************************************************************************************
     ** When I call this route '/api/bancuri' the code within it will execute.
@@ -110,6 +205,8 @@ module.exports = function(app, db) {
 
         });
     });
+
+
 
     // API route to insert a new entry.
     app.post('/api/PostNewEntry', function(req, res, next) {
