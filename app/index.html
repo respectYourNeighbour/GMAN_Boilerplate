@@ -23,21 +23,15 @@
 
     <body ng-app="sampleApp" ng-controller="MainController">
 
-        <button ng-click="changeLanguage('de')" translate="BUTTON_LANG_DE"></button>
-        <button ng-click="changeLanguage('en')" translate="BUTTON_LANG_EN"></button>
-        <button ng-click="changeLanguage('fr')" translate="BUTTON_LANG_FR"></button>
-
-
 
         <div class="container">
-
             <nav class="navbar navbar-inverse">
                 <div class="navbar-header">
                     <a class="navbar-brand" ui-sref="/">Home</a>
                 </div>
 
                 <!-- Link to our pages. Angular handles the routing here. -->
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav navbar">
                     <li><a ui-sref="menu1">Menu 1</a></li>
                     <li><a ui-sref="menu2">Menu 2</a></li>
                     <li><a ui-sref="menu3">Menu 3</a></li>
@@ -69,7 +63,11 @@
                 </ul>
             </nav>
 
+            <button ng-click="changeLanguage('de')" translate="BUTTON_LANG_DE"></button>
+            <button ng-click="changeLanguage('en')" translate="BUTTON_LANG_EN"></button>
+            <button ng-click="changeLanguage('fr')" translate="BUTTON_LANG_FR"></button>
             <!-- Angular dynamic content -->
+
             <div ui-view></div>
         </div>
 
