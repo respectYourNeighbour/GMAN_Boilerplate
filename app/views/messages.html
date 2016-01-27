@@ -1,22 +1,22 @@
 <section>
-    <div class="page-header">
-    	<h1>Inbox</h1>
-  	</div>
-  	<div class="list-group">
-    	<a ng-repeat="message in messages" ui-sref="messages.view({ messageId: message._id })" class="list-group-item">
+	<div class="page-header">
+		<h1>Inbox</h1>
+	</div>
+	<div class="list-group">
+		<a ng-repeat="message in messages" ui-sref="messages.view({ messageId: message._id })" class="list-group-item">
 
-      	<small class="list-group-item-text">
-        	Sent on
-        	<span ng-bind="message.date | date:'mediumDate'"></span>
-        	by
-        	<span ng-bind="message.from"></span>
-      	</small>
-      	<br />
-      	Subject : <h4 class="list-group-item-heading" ng-bind="message.subject"></h4>
-      	Content : <p class="list-group-item-text" ng-bind="message.body"></p>
-    	</a>
-  	</div>
-  	<div class="alert alert-warning text-center" ng-if="!messages.length">
-    	No articles yet, why don't you <a ui-sref="articles.create">create one</a>?
-  	</div>
+		<small class="list-group-item-text">
+			Sent on
+			<span ng-bind="message.date | date:'mediumDate'"></span>
+			by
+			<span ng-bind="message.from"></span>
+		</small>
+		<br />
+		Subject : <h4 class="list-group-item-heading" ng-bind="message.subject"></h4>
+		Content : <p class="list-group-item-text" ng-bind="message.body"></p>
+		</a>
+	</div>
+	<div class="alert alert-warning text-center" ng-if="!messages.length">
+		No articles yet, why don't you <a ui-sref="articles.create">create one</a>?
+	</div>
 </section>

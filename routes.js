@@ -5,9 +5,16 @@ var jwt = require('jwt-simple');
 var moment = require('moment');
 var config = require('./config')
 var mongoose = require('mongoose');
+
 module.exports = function(app, db) {
-    // Connect to a collection from our database;
+
+    /*
+    |--------------------------------------------------------------------------
+    | DB COLLECTIONS
+    |--------------------------------------------------------------------------
+    */
     var posts = db.collection("NMAstarterkit");
+
 
     /*
     |--------------------------------------------------------------------------
@@ -34,6 +41,7 @@ module.exports = function(app, db) {
         req.user = payload.sub;
         next();
     }
+
 
     /*
      |--------------------------------------------------------------------------
@@ -85,10 +93,19 @@ module.exports = function(app, db) {
     }
 
     /****************************************************************************************************
-    ** SERVER ROUTES
-    ** Here we have the server routes where we handle API calls, authentication routes, etc.
+    *****************************************************************************************************
+    **
+    **      SERVER ROUTES
+    **      Here we have the server routes where we handle API calls, authentication routes, etc.
+    **
+    *****************************************************************************************************
     ***************************************************************************************************** */
 
+    /*
+     |--------------------------------------------------------------------------
+     | LOGIN
+     |--------------------------------------------------------------------------
+     */
     app.post('/auth/login', function(req, res) {
         User.findOne({ email: req.body.email }, '+password', function(err, user) {
             if (!user) {
@@ -102,6 +119,7 @@ module.exports = function(app, db) {
             });
         });
     });
+
 
     /*
      |--------------------------------------------------------------------------
@@ -128,7 +146,12 @@ module.exports = function(app, db) {
       });
     });
 
-    // API route to insert a new entry.
+
+    /*
+     |--------------------------------------------------------------------------
+     | POST MESSAGE
+     |--------------------------------------------------------------------------
+     */
     app.post('/api/newMessage', function(req, res, next) {
 
         console.log('req.body',req.body);
@@ -152,6 +175,12 @@ module.exports = function(app, db) {
         });
     });
 
+
+    /*
+     |--------------------------------------------------------------------------
+     | GET MESSAGES
+     |--------------------------------------------------------------------------
+     */
     app.get('/api/unreadMessages', function(req, res) {
 
         // use mongoDB Driver to get all bancs in the database;
@@ -166,6 +195,13 @@ module.exports = function(app, db) {
             res.json(items);
         });
     });
+
+
+    /*
+     |--------------------------------------------------------------------------
+     | NR. MESSAGES
+     |--------------------------------------------------------------------------
+     */
     app.get('/api/numberOfUnreadMessages', function(req, res) {
 
         // use mongoDB Driver to get all bancs in the database;
@@ -182,15 +218,11 @@ module.exports = function(app, db) {
     });
 
 
-
-
-
-
-
-    /****************************************************************************************************
-    ** When I call this route '/api/bancuri' the code within it will execute.
-    ***************************************************************************************************** */
-    // Sample API route.
+    /*
+     |--------------------------------------------------------------------------
+     | GET ENTRY
+     |--------------------------------------------------------------------------
+     */
     app.get('/api/getEntries', function(req, res) {
 
         // use mongoDB Driver to get all bancs in the database;
@@ -207,8 +239,11 @@ module.exports = function(app, db) {
     });
 
 
-
-    // API route to insert a new entry.
+    /*
+     |--------------------------------------------------------------------------
+     | POST ENTRY
+     |--------------------------------------------------------------------------
+     */
     app.post('/api/PostNewEntry', function(req, res, next) {
 
         var doc = req.body;
@@ -226,7 +261,11 @@ module.exports = function(app, db) {
     });
 
 
-    // API route to delete a new entry.
+    /*
+     |--------------------------------------------------------------------------
+     | DELETE ENTRY
+     |--------------------------------------------------------------------------
+     */
     app.put('/api/deletePost', function(req, res, next) {
 
         console.log("req.body: ",req.body._id)
@@ -242,7 +281,12 @@ module.exports = function(app, db) {
         });
     });
 
-    // API route to edit a new entry.
+
+    /*
+     |--------------------------------------------------------------------------
+     | EDIT ENTRY
+     |--------------------------------------------------------------------------
+     */
     app.put('/api/editPost', function(req, res, next) {
 
         console.log("req.body: ",req.body.obj)
@@ -261,10 +305,14 @@ module.exports = function(app, db) {
 
 
     /****************************************************************************************************
-    ** FRONTEND ROUTES
-    ** This route will handle all Angular requests.
-    ** Here we are saying: "whatever the request route is, send the ./app/index.html file"
-    ** And from inside this index.html file Angular will take over.
+    *****************************************************************************************************
+    **
+    **      FRONTEND ROUTES
+    **      This route will handle all Angular requests.
+    **      Here we are saying: "whatever the request route is, send the ./app/index.html file"
+    **      And from inside this index.html file Angular will take over.
+    **
+    *****************************************************************************************************
     ***************************************************************************************************** */
     app.get('*', function(req, res) {
         res.sendfile('./dist/index.html'); // Load our 'public/index.html' file.
