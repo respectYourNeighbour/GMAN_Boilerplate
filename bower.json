@@ -15,7 +15,7 @@
     "angular-translate-storage-cookie": "2.8.1",
     "angular-translate-storage-local": "2.8.1",
     "angular-translate-loader-static-files": "2.8.1",
-    "bootstrap": "3.3.5",
+    "bootstrap": "3.3.4",
     "angular-utils-pagination": "*",
     "jquery": "1.11.3",
     "font-awesome": "4.5.0",
