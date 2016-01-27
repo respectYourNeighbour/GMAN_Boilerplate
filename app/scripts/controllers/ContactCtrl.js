@@ -20,7 +20,7 @@
 			    body: $scope.user.body
 			};
 			ContactService.sendMessage(message).then(function(data){
-				toastr.success('Message sent');
+				toastr.success('Message sent' + data);
 				$scope.user = null;
 			});
 		};
