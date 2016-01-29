@@ -52,15 +52,24 @@ angular
 	            url : '/menu1',
 	            controller: 'Menu1Controller'
 	        })
-	        .state('menu2', {
-	            templateUrl: 'views/menu2.html',
-	            url : '/menu2',
-	            controller: 'Menu2Controller'
+	        .state('pagination', {
+	            templateUrl: 'views/pagination.html',
+	            url : '/pagination',
+	            controller: 'PaginationController',
+	            resolve : {
+	            	itemCount : function(ContentService) {
+	            		console.log('itemCount');
+	            		return ContentService.getPaginationItemCount();
+	            	},
+	            	items : function(ContentService) {
+	            		return ContentService.getItems(5,1);
+	            	}
+	            }
 	        })
-	        .state('menu3', {
-	            templateUrl: 'views/menu3.html',
-	            url : '/menu3',
-	            controller: 'Menu3Controller'
+	        .state('textEditor', {
+	            templateUrl: 'views/textEditor.html',
+	            url : '/textEditor',
+	            controller: 'TextEditorController'
 	        })
 	        .state('messages', {
 		        abstract: true,

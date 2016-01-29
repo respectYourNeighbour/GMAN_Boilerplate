@@ -34,8 +34,8 @@
                 <!-- Link to our pages. Angular handles the routing here. -->
                 <ul class="nav navbar-nav navbar">
                     <li><a ui-sref="menu1">Menu 1</a></li>
-                    <li><a ui-sref="menu2">Menu 2</a></li>
-                    <li><a ui-sref="menu3">Text Editor</a></li>
+                    <li><a ui-sref="pagination">Pagination</a></li>
+                    <li><a ui-sref="textEditor">Text Editor</a></li>
                     <li><a ui-sref="messages.list" ng-if="isAuthenticated()">Messages</a></li>
                     <li><a ui-sref="contact">Contact</a></li>
                     <li class="dropdown">
@@ -126,7 +126,6 @@
         <script src="bower_components/angular-translate-storage-local/angular-translate-storage-local.js"></script>
         <script src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
         <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="bower_components/angular-utils-pagination/dirPagination.js"></script>
         <script src="bower_components/angular-busy/dist/angular-busy.js"></script>
         <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
         <script src="bower_components/satellizer/satellizer.js"></script>
@@ -140,6 +139,7 @@
         <script src="bower_components/textAngular/dist/textAngular.js"></script>
         <script src="bower_components/textAngular/dist/textAngular-sanitize.js"></script>
         <script src="bower_components/textAngular/dist/textAngularSetup.js"></script>
+        <script src="bower_components/angular-utils-pagination/dirPagination.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
 
@@ -160,8 +160,8 @@
         <!-- Home  Controller   --> <script src="scripts/controllers/MainCtrl.js"></script>
         <!-- Home  Controller   --> <script src="scripts/controllers/HomeCtrl.js"></script>
         <!-- Menu 1 Controller  --> <script src="scripts/controllers/Menu1Ctrl.js"></script>
-        <!-- Menu 2 Controller  --> <script src="scripts/controllers/Menu2Ctrl.js"></script>
-        <!-- Menu 3 Controller  --> <script src="scripts/controllers/Menu3Ctrl.js"></script>
+        <!-- Menu 2 Controller  --> <script src="scripts/controllers/PaginationCtrl.js"></script>
+        <!-- Menu 3 Controller  --> <script src="scripts/controllers/TextEditorCtrl.js"></script>
         <!-- Menu 4 Controller  --> <script src="scripts/controllers/MessagesCtrl.js"></script>
         <!-- Menu 5 Controller  --> <script src="scripts/controllers/ContactCtrl.js"></script>
         <!-- Login Controller   --> <script src="scripts/controllers/LoginCtrl.js"></script>
@@ -177,6 +177,7 @@
         <!--  Suedeza Service   --> <script src="scripts/services/HomeService.js"></script>
         <!--  Auth Service      --> <script src="scripts/services/AuthenticationService.js"></script>
         <!--  Contact Service   --> <script src="scripts/services/ContactService.js"></script>
+        <!--  Content Service   --> <script src="scripts/services/ContentService.js"></script>
 
 
         <!--****************************
