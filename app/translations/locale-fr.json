@@ -7,5 +7,6 @@
     "VARIABLE_REPLACEMENT": "Hi {{name}}",
     "BUTTON_LANG_DE": "Allemand",
     "BUTTON_LANG_EN": "Anglais",
-    "BUTTON_LANG_FR": "Français"
+    "BUTTON_LANG_FR": "Français",
+    "EDITOR" : "Éditeur de texte"
 }

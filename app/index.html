@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="bower_components/angular-busy/dist/angular-busy.css" />
         <link rel="stylesheet" href="bower_components/angular-toastr/dist/angular-toastr.css" />
+        <link rel="stylesheet" href="bower_components/textAngular/dist/textAngular.css" />
         <!-- endbower -->
         <!-- endbuild -->
         <!-- build:css(.tmp) styles/main.css -->
@@ -34,7 +35,7 @@
                 <ul class="nav navbar-nav navbar">
                     <li><a ui-sref="menu1">Menu 1</a></li>
                     <li><a ui-sref="menu2">Menu 2</a></li>
-                    <li><a ui-sref="menu3">Menu 3</a></li>
+                    <li><a ui-sref="menu3">Text Editor</a></li>
                     <li><a ui-sref="messages.list" ng-if="isAuthenticated()">Messages</a></li>
                     <li><a ui-sref="contact">Contact</a></li>
                     <li class="dropdown">
@@ -130,6 +131,15 @@
         <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
         <script src="bower_components/satellizer/satellizer.js"></script>
         <script src="bower_components/angular-toastr/dist/angular-toastr.tpls.js"></script>
+        <script src="bower_components/rangy/rangy-core.js"></script>
+        <script src="bower_components/rangy/rangy-classapplier.js"></script>
+        <script src="bower_components/rangy/rangy-highlighter.js"></script>
+        <script src="bower_components/rangy/rangy-selectionsaverestore.js"></script>
+        <script src="bower_components/rangy/rangy-serializer.js"></script>
+        <script src="bower_components/rangy/rangy-textrange.js"></script>
+        <script src="bower_components/textAngular/dist/textAngular.js"></script>
+        <script src="bower_components/textAngular/dist/textAngular-sanitize.js"></script>
+        <script src="bower_components/textAngular/dist/textAngularSetup.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
 

@@ -15,7 +15,8 @@ angular
 			'angularUtils.directives.dirPagination',
 			'cgBusy',
 			'satellizer',
-			'toastr'
+			'toastr',
+            'textAngular'
 	])
 	.config(function ($stateProvider, $translateProvider, $urlRouterProvider) {
 		function skipIfLoggedIn($q, $auth) {
