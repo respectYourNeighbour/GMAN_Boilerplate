@@ -17,7 +17,7 @@
                 },
 
                 getItems : function(itemsPerPage, pageNumber) {
-                    console.log('getItems',pageNumber)
+                    console.log('getItems',pageNumber);
                     return $http.get('/api/getEntries/getItems/' + itemsPerPage + '/' + pageNumber);
                 }
 
@@ -26,6 +26,3 @@
     }]);
 
 }());
-
-
-

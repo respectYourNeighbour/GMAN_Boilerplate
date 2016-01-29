@@ -30,7 +30,7 @@
             ContentService.getItems($scope.pageSize, num).success(function(data) {
             	console.log('pageChange success data',data);
             	$scope.myItems = data;
-            })
+            });
         };
     }
 

@@ -146,10 +146,10 @@ angular
                 'de_*': 'de',
                 'fr_*': 'fr'
             })
-            // fallback language. If there isn't a translation id in the German translation table, angular-translate will search for it in the English or French translation table, etc.
-            .fallbackLanguage(['en','fr'])
             // This method tries to determine by itself what the preferred language would be.
             .determinePreferredLanguage()
+            // fallback language. If there isn't a translation id in the German translation table, angular-translate will search for it in the English or French translation table, etc.
+            .fallbackLanguage(['en'])
             // remember language
             .useLocalStorage();
     });
