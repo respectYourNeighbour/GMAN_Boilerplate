@@ -147,6 +147,55 @@ module.exports = function(app, db) {
 	});
 
 
+    app.get('/api/getEntries/getItemCount', function(req, res) {
+        console.log('getItemCount');
+        db.collection('items').find().toArray(function(err, items) {
+            "use strict";
+
+            if (err) throw err;
+
+            console.log("Found " + items.length + " items");
+
+            res.json(items.length);
+
+        });
+    });
+
+    app.param('pageNumber', function(req, res, next, pageNumber) {
+        console.log('pageNumber',pageNumber);
+        req.pageNumber = pageNumber;
+        console.log('req.pageNumber',req.pageNumber);
+        next();
+    })
+
+    app.param('itemsPerPage', function(req, res, next, itemsPerPage) {
+        console.log('itemsPerPage',itemsPerPage);
+        req.itemsPerPage = itemsPerPage;
+        console.log('req.itemsPerPage',req.itemsPerPage);
+        next();
+    })
+
+    app.get('/api/getEntries/getItems/:itemsPerPage/:pageNumber', function(req, res) {
+        console.log('getItems/:itemsPerPage >> ',req.itemsPerPage);
+        console.log('getItems/:pageNumber >> ',req.pageNumber);
+        var itemsPerPage = parseInt(req.itemsPerPage);
+        var pageNumber = parseInt(req.pageNumber);
+        db.collection('items').find().skip(itemsPerPage*(pageNumber - 1)).limit(itemsPerPage).toArray(function(err, items) {
+            "use strict";
+
+            if (err) throw err;
+            for(var i = 0; i<items.length; i++) {
+                console.log('timestamp : ', mongoose.Types.ObjectId(items[i]._id).getTimestamp());
+            }
+
+            console.log("Found " + items.length + " items");
+
+            res.json(items);
+
+        });
+    });
+
+
 	/*
 	 |--------------------------------------------------------------------------
 	 | POST MESSAGE

@@ -1,0 +1,15 @@
+<section>
+    <div class="col-md-12 col-lg-10 col-lg-offset-1">
+            <div class="bn-box bn-sepia" dir-paginate="item in myItems | filter:searchFilter | itemsPerPage: pageSize" pagination-id="bancuri" current-page="currentPage" total-items="totalItems">
+                {{item.name.first}} - {{item.name.last}} <br />
+                {{item.body}} <br />
+                {{item._id}}
+                <hr>
+            </div>
+            <hr>
+        </div>
+
+        <div class="text-center">
+            <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" pagination-id="bancuri" template-url="./views/dirPagination.tpl.html"></dir-pagination-controls>
+        </div>
+</section>
