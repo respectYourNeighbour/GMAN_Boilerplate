@@ -81,6 +81,7 @@ angular
 	            url : '',
 	            controller: 'MessagesController',
 		        resolve: {
+		        	loginRequired: loginRequired,
 		          	unreadMessages : function(ContactService) {
 		          		return ContactService.getUnreadMessages();
 		          	}
@@ -130,6 +131,16 @@ angular
 		        resolve: {
 		          	loginRequired: loginRequired
 		        }
+	        })
+	        .state('admin', {
+	            abstract: true,
+		        url: '/admin',
+		        template: '<ui-view/>'
+	        })
+	        .state('admin.login', {
+	            templateUrl: 'views/admin/adminLogin.html',
+	            url : '',
+	            controller: 'AdminLoginController'
 	        });
 	        $urlRouterProvider.otherwise('/');
         //Translations
