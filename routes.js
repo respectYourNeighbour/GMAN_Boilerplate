@@ -359,7 +359,7 @@ module.exports = function(app, db) {
 	 |--------------------------------------------------------------------------
 	 */
 	app.post('/api/sendText', function(req, res) {
-		console.log("req.body: ",req.text)
+		console.log("req.body: ",req.text.text)
 	});
 
 
