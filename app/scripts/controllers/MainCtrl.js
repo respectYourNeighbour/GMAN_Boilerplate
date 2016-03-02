@@ -16,6 +16,11 @@
         $scope.isAuthenticated = function() {
           return AuthenticationService.isAuthenticated();
         };
+
+        //google analytics
+        $scope.$on('$viewContentLoaded', function() {
+            $window.ga('send', 'pageview', { page: $location.url() });
+        });
     }
 
     angular
