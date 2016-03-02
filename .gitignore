@@ -5,3 +5,4 @@ bower_components
 .tmp
 .sass-cache
 npm-debug.log*
+.idea

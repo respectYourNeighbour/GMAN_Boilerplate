@@ -9,6 +9,7 @@ var MongoClient    = require('mongodb').MongoClient; //This is the MongoDB Drive
 //** MongoClient - From the module 'mongodb' we get the MongoClient object. This object is our interface into the 'mongodb' driver library. Through this MongoClient object we will access the API methods to the driver wich will then handle whatever operation we requested.
 var bodyParser     = require('body-parser');
 var methodOverride = require('method-override');
+var compression    = require('compression'); //Node.js compression middleware, .deflate, .gzip
 var mongoose       = require('mongoose');
 
 
@@ -31,6 +32,9 @@ db.on('connected', function () {
 	app.use(bodyParser.json()); // parse application/json ;
 	app.use(bodyParser.json({ type: 'application/vnd.api+json' })); // parse application/vnd.api+json as json
 	app.use(bodyParser.urlencoded({ extended: true })); // parse application/x-www-form-urlencoded
+
+    // compress all requests
+    app.use(compression());
 
 	app.use(methodOverride('X-HTTP-Method-Override')); // override with the X-HTTP-Method-Override header in the request. simulate DELETE/PUT
 	app.use(express.static(__dirname + '/dist')); //We set the static files location '/app'
